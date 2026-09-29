@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arush Pratap Singh — Cybersecurity & Software</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: { teal: '#20B2AA' },
+            surface: { base: '#ffffff', card: '#fefefe' }
+          },
+          animation: {
+            'marquee': 'marquee 25s linear infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-100%)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-12px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons (For UI arrows/buttons only) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Scrollbar for Light Theme */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f9fafb; }
+    ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+    /* Scroll Reveal Classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 font-sans antialiased selection:bg-brand-teal selection:text-white overflow-x-hidden">
+
+  <!-- Navigation -->
+  <header class="fixed top-0 inset-x-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="font-bold text-lg tracking-tight hover:opacity-70 transition-opacity">A—S<span class="text-gray-400 font-normal">©</span></a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-widest text-gray-500 uppercase">
+        <a href="#about" class="hover:text-gray-900 transition-colors">About</a>
+        <a href="#capabilities" class="hover:text-gray-900 transition-colors">Capabilities</a>
+        <a href="#work" class="hover:text-gray-900 transition-colors">Work</a>
+        <a href="#contact" class="hover:text-gray-900 transition-colors">Contact</a>
+      </nav>
+
+      <a href="#contact" class="px-5 py-2 rounded-full border border-gray-200 text-xs font-semibold tracking-widest text-gray-500 uppercase hover:border-gray-900 hover:text-gray-900 hover:shadow-md transition-all active:scale-95">
+        Open To Work
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main class="max-w-6xl mx-auto px-6 pt-40 pb-20 reveal active">
+    <div class="flex flex-col md:flex-row gap-16 items-start">
+      <!-- Profile Image with Float Effect -->
+      <div class="w-full md:w-1/3 shrink-0 animate-float">
+        <div class="w-full aspect-[4/5] rounded-3xl overflow-hidden bg-gray-100 border border-gray-100 shadow-xl shadow-gray-200/50">
+          <img src="assets/profile.jpg" alt="Arush Pratap Singh" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80';"/>
+        </div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="w-full md:w-2/3 pt-4">
+        <p class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-8">
+          Portfolio © 2026 — Delhi, India
+        </p>
+
+        <h1 class="text-6xl sm:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.05] mb-8">
+          Arush<br/>Pratap<br/>Singh
+        </h1>
+
+        <p class="text-xs font-bold tracking-widest text-brand-teal uppercase mb-6">
+          Aspiring Android Developer — AI & Cloud
+        </p>
+
+        <p class="text-lg text-gray-500 leading-relaxed max-w-xl mb-10">
+          Computer Science student at VIT Bhopal University, passionate about building useful applications — exploring where Android development, AI and cloud technologies meet. Currently open to internships and full-time roles.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#work" class="text-xs font-semibold tracking-widest text-gray-500 uppercase flex items-center gap-2 hover:text-gray-900 transition-colors group">
+            View Selected Work <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
+          </a>
+
+          <div class="flex items-center gap-2 ml-4">
+            <a href="https://github.com/arush89013" target="_blank" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-gray-900 hover:border-gray-900 hover:-translate-y-1 hover:shadow-md transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/arush-pratap-singh-788804395" target="_blank" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-[#0A66C2] hover:border-[#0A66C2] hover:-translate-y-1 hover:shadow-md transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="mailto:arush89013@gmail.com" class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-red-500 hover:border-red-500 hover:-translate-y-1 hover:shadow-md transition-all">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SCROLLING TICKER -->
+  <div class="border-y border-gray-100 overflow-hidden bg-white py-4 flex whitespace-nowrap hover:[&>div]:[animation-play-state:paused] cursor-default">
+    <div class="animate-marquee flex items-center gap-8 text-xl font-bold tracking-tight text-gray-900 uppercase min-w-full">
+      <span>Android Development</span><span class="text-brand-teal">✶</span>
+      <span>Kotlin</span><span class="text-brand-teal">✶</span>
+      <span>Java</span><span class="text-brand-teal">✶</span>
+      <span>Python</span><span class="text-brand-teal">✶</span>
+      <span>AI & Cloud</span><span class="text-brand-teal">✶</span>
+      <span>Problem Solving</span><span class="text-brand-teal">✶</span>
+    </div>
+    <div class="animate-marquee flex items-center gap-8 text-xl font-bold tracking-tight text-gray-900 uppercase min-w-full" aria-hidden="true">
+      <span>Android Development</span><span class="text-brand-teal">✶</span>
+      <span>Kotlin</span><span class="text-brand-teal">✶</span>
+      <span>Java</span><span class="text-brand-teal">✶</span>
+      <span>Python</span><span class="text-brand-teal">✶</span>
+      <span>AI & Cloud</span><span class="text-brand-teal">✶</span>
+      <span>Problem Solving</span><span class="text-brand-teal">✶</span>
+    </div>
+  </div>
+
+  <!-- SECTION: ABOUT -->
+  <section id="about" class="max-w-6xl mx-auto px-6 pt-32 pb-20 reveal">
+    <div class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-16 flex items-center gap-4">
+      <span class="text-brand-teal">01</span> About
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-16">
+      <div class="md:col-span-7">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-8">
+          I'm a Computer Science student at Vellore Institute of Technology, Bhopal University — passionate about building useful applications and exploring where Android, AI and cloud technologies meet.
+        </h2>
+        <p class="text-gray-500 leading-relaxed text-lg">
+          Right now that means three things: building a hardware token authentication system, learning Android development through practical, user-friendly apps, and exploring how AI and cloud technologies fit into future projects.
+        </p>
+      </div>
+
+      <div class="md:col-span-5 pt-2 border-t md:border-t-0 md:border-l border-gray-200 md:pl-10">
+        <div class="flex items-start justify-between py-4 border-b border-gray-100 hover:bg-gray-50 transition-colors px-2 rounded-lg">
+          <span class="text-xs font-semibold tracking-widest text-gray-400 uppercase w-1/3">Education</span>
+          <span class="text-sm font-medium text-right w-2/3">B.Tech — Computer Science & Engineering, VIT Bhopal University</span>
+        </div>
+        <div class="flex items-start justify-between py-4 border-b border-gray-100 hover:bg-gray-50 transition-colors px-2 rounded-lg">
+          <span class="text-xs font-semibold tracking-widest text-gray-400 uppercase w-1/3">Focus</span>
+          <span class="text-sm font-medium text-right w-2/3">Android Development · AI · Cloud</span>
+        </div>
+        <div class="flex items-start justify-between py-4 border-b border-gray-100 hover:bg-gray-50 transition-colors px-2 rounded-lg">
+          <span class="text-xs font-semibold tracking-widest text-gray-400 uppercase w-1/3">Based In</span>
+          <span class="text-sm font-medium text-right w-2/3">Delhi, India</span>
+        </div>
+        <div class="flex items-start justify-between py-4 hover:bg-gray-50 transition-colors px-2 rounded-lg">
+          <span class="text-xs font-semibold tracking-widest text-gray-400 uppercase w-1/3">Status</span>
+          <span class="text-sm font-medium text-right w-2/3">Open to internships & full-time roles</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="max-w-6xl mx-auto border-gray-100">
+
+  <!-- SECTION: CAPABILITIES -->
+  <section id="capabilities" class="max-w-6xl mx-auto px-6 pt-32 pb-20 reveal">
+    <div class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-16 flex items-center gap-4">
+      <span class="text-brand-teal">02</span> Capabilities
+    </div>
+
+    <div class="p-8 sm:p-12 rounded-3xl border border-gray-100 bg-[#fafafa]">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+
+        <!-- Grid 1 -->
+        <div>
+          <h3 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">01 — Languages & Databases</h3>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" alt="Kotlin" class="w-10 h-10 hover:scale-110 transition-transform"/>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">Kotlin</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="w-10 h-10 hover:scale-110 transition-transform"/>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">Java</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="w-10 h-10 hover:scale-110 transition-transform"/>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">Python</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-10 h-10 hover:scale-110 transition-transform"/>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">C++</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" class="w-10 h-10 hover:scale-110 transition-transform"/>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">C</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="w-10 h-10 hover:scale-110 transition-transform"/>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid 2 -->
+        <div>
+          <h3 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">02 — Tools & IDEs</h3>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" alt="Android Studio" class="w-10 h-10 hover:scale-110 transition-transform"/>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Android Studio</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" class="w-10 h-10 hover:scale-110 transition-transform"/>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">VS Code</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA" class="w-10 h-10 hover:scale-110 transition-transform"/>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">IntelliJ Idea</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg" alt="MATLAB" class="w-10 h-10 hover:scale-110 transition-transform"/>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">MATLAB</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <!-- Official AutoCAD Red Logo SVG -->
+              <svg viewBox="0 0 24 24" fill="none" class="w-10 h-10 hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.4 2.4h19.2v19.2H2.4V2.4z" fill="#D32F2F"/>
+                <path d="M12 5.5l-5 13h2.2l1.3-3.6h3l1.3 3.6h2.2l-5-13zm-1 7.6l1-2.9 1 2.9h-2z" fill="#FFF"/>
+              </svg>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">AutoCAD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid 3 -->
+        <div>
+          <h3 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">03 — Currently Exploring</h3>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" alt="Android" class="w-10 h-10 hover:scale-110 transition-transform"/>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Android Dev</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <!-- Custom AI Purple Sparkle (Matching PDF) -->
+              <svg viewBox="0 0 24 24" fill="none" class="w-10 h-10 hover:scale-110 transition-transform" stroke="none">
+                <path d="M12 2L14 9L21 11L14 13L12 20L10 13L3 11L10 9L12 2Z" fill="#9b59b6" />
+              </svg>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Artificial Intelligence</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <!-- Cloud Icon -->
+              <svg viewBox="0 0 24 24" class="w-10 h-10 hover:scale-110 transition-transform" fill="#3498db">
+                <path d="M17.5 19c2.48 0 4.5-2.02 4.5-4.5 0-2.31-1.74-4.23-4-4.46V10c0-3.31-2.69-6-6-6-2.92 0-5.36 2.09-5.9 4.88C3.26 9.4 1 11.66 1 14.5 1 17.53 3.47 20 6.5 20h11z"/>
+              </svg>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Cloud Tech</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid 4 -->
+        <div>
+          <h3 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">04 — Strengths</h3>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <!-- Lightbulb Outline -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hover:scale-110 transition-transform"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.2 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Problem Solving</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <!-- Data Structure Tree Outline -->
+              <svg viewBox="0 0 24 24" fill="none" width="36" height="36" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hover:scale-110 transition-transform">
+                <rect x="10" y="3" width="4" height="4" rx="1" />
+                <rect x="3" y="17" width="4" height="4" rx="1" />
+                <rect x="17" y="17" width="4" height="4" rx="1" />
+                <path d="M12 7v5" />
+                <path d="M12 12H5v5" />
+                <path d="M12 12h7v5" />
+              </svg>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Data Structures</span>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+              <!-- Shield Outline -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hover:scale-110 transition-transform"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Security Projects</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <p class="text-[10px] font-semibold tracking-widest text-gray-400 uppercase mt-6 ml-4">
+      Skills as listed on my GitHub & LinkedIn profiles.
+    </p>
+  </section>
+
+  <hr class="max-w-6xl mx-auto border-gray-100">
+
+  <!-- SECTION: WORK -->
+  <section id="work" class="max-w-6xl mx-auto px-6 pt-32 pb-20 reveal">
+    <div class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-16 flex items-center gap-4">
+      <span class="text-brand-teal">03</span> Selected Work
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Project 1 -->
+      <div class="rounded-3xl border border-gray-200 bg-white p-10 flex flex-col relative group hover:-translate-y-2 hover:border-gray-300 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-500">
+        <a href="https://github.com/arush89013/cyberforge" target="_blank" class="absolute top-8 right-8 w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-gray-900 group-hover:border-gray-900 transition-all duration-300">
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+
+        <span class="text-6xl font-bold tracking-tighter text-gray-100 mb-8 block transition-colors group-hover:text-gray-200">01</span>
+
+        <h3 class="text-3xl font-bold tracking-tight text-gray-900 mb-2">CyberForge</h3>
+        <p class="text-xs font-bold tracking-widest text-brand-teal uppercase mb-6">Security Automation Toolkit</p>
+
+        <p class="text-gray-500 mb-8 leading-relaxed">
+          CyberForge (also known as Banking Sentinel) is an end-to-end intelligent fraud prevention system and adaptive multi-factor authentication (MFA) banking suite.
+        </p>
+
+        <ul class="space-y-3 mb-12 flex-grow">
+          <li class="flex items-start gap-3 text-sm text-gray-600">
+            <i data-lucide="plus" class="w-4 h-4 text-brand-teal shrink-0 mt-0.5"></i>
+            Multi-Layered AI Risk Engine
+          </li>
+          <li class="flex items-start gap-3 text-sm text-gray-600">
+            <i data-lucide="plus" class="w-4 h-4 text-brand-teal shrink-0 mt-0.5"></i>
+            Out-of-Band Hardware Token (ESP32)
+          </li>
+          <li class="flex items-start gap-3 text-sm text-gray-600">
+            <i data-lucide="plus" class="w-4 h-4 text-brand-teal shrink-0 mt-0.5"></i>
+            Data Protection & Compliance
+          </li>
+          <li class="flex items-start gap-3 text-sm text-gray-600">
+            <i data-lucide="plus" class="w-4 h-4 text-brand-teal shrink-0 mt-0.5"></i>
+            Real-time Banking Dashboard
+          </li>
+        </ul>
+
+        <div class="pt-6 border-t border-gray-100 flex items-center justify-between">
+          <span class="text-[10px] font-semibold tracking-widest text-gray-500 uppercase group-hover:text-brand-teal transition-colors">View On GitHub — arush89013/cyberforge</span>
+        </div>
+        <a href="https://github.com/arush89013/cyberforge" target="_blank" class="absolute inset-0 z-10"></a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="rounded-3xl border border-gray-200 bg-white p-10 flex flex-col relative group hover:-translate-y-2 hover:border-gray-300 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-500">
+        <a href="https://github.com/arush89013/min-sentinel" target="_blank" class="absolute top-8 right-8 w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-gray-900 group-hover:border-gray-900 transition-all duration-300">
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+
+        <span class="text-6xl font-bold tracking-tighter text-gray-100 mb-8 block transition-colors group-hover:text-gray-200">02</span>
+
+        <h3 class="text-3xl font-bold tracking-tight text-gray-900 mb-2">Mind-Sentinel</h3>
+        <p class="text-xs font-bold tracking-widest text-brand-teal uppercase mb-6">AI For Early Mental-Distress Detection</p>
+
+        <p class="text-gray-500 mb-8 leading-relaxed">
+          An AI system that detects hidden mental distress before a person asks for help — using behaviour pattern analysis, sentiment scoring and real-time risk assessment.
+        </p>
+
+        <ul class="space-y-3 mb-12 flex-grow">
+          <li class="flex items-start gap-3 text-sm text-gray-600">
+            <i data-lucide="plus" class="w-4 h-4 text-brand-teal shrink-0 mt-0.5"></i>
+            Live Monitor — real-time distress detection
+          </li>
+          <li class="flex items-start gap-3 text-sm text-gray-600">
+            <i data-lucide="plus" class="w-4 h-4 text-brand-teal shrink-0 mt-0.5"></i>
+            Global Analytics — anonymous stress trends
+          </li>
+          <li class="flex items-start gap-3 text-sm text-gray-600">
+            <i data-lucide="plus" class="w-4 h-4 text-brand-teal shrink-0 mt-0.5"></i>
+            Trusted Contacts — high-risk alerts
+          </li>
+          <li class="flex items-start gap-3 text-sm text-gray-600">
+            <i data-lucide="plus" class="w-4 h-4 text-brand-teal shrink-0 mt-0.5"></i>
+            Resources — hotlines, exercises, meditations
+          </li>
+        </ul>
+
+        <div class="pt-6 border-t border-gray-100 flex items-center justify-between">
+          <span class="text-[10px] font-semibold tracking-widest text-gray-500 uppercase group-hover:text-brand-teal transition-colors">View On GitHub — arush89013/mind-sentinel</span>
+        </div>
+        <a href="https://github.com/arush89013/min-sentinel" target="_blank" class="absolute inset-0 z-10"></a>
+      </div>
+
+    </div>
+
+    <div class="mt-8 flex justify-end">
+      <a href="https://github.com/arush89013" target="_blank" class="text-[10px] font-semibold tracking-widest text-gray-500 uppercase flex items-center gap-1 hover:text-gray-900 transition-colors">
+        All Repositories <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION: CONTACT -->
+  <section id="contact" class="max-w-6xl mx-auto px-6 pt-32 pb-32 reveal">
+    <div class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-16 flex items-center gap-4">
+      <span class="text-brand-teal">04</span> Contact
+    </div>
+
+    <h2 class="text-5xl sm:text-6xl font-bold tracking-tighter mb-6 text-gray-900">
+      Let's build something.
+    </h2>
+    <p class="text-gray-500 text-lg mb-16 max-w-xl">
+      I'm open to internships, full-time roles and interesting collaborations.<br>
+      The fastest way to reach me is email — or connect on LinkedIn.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 border border-gray-200 rounded-3xl mb-8 overflow-hidden shadow-sm">
+      <!-- Github -->
+      <a href="https://github.com/arush89013" target="_blank" class="p-8 border-b md:border-b-0 md:border-r border-gray-200 hover:bg-gray-50 transition-all duration-300 group relative flex flex-col justify-between min-h-[220px]">
+        <svg class="text-gray-400 group-hover:text-gray-900 transition-colors" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        <div class="absolute top-8 right-8 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
+          <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <p class="text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">Github</p>
+          <p class="font-medium text-gray-900">github.com/arush89013</p>
+        </div>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/arush-pratap-singh-788804395" target="_blank" class="p-8 border-b md:border-b-0 md:border-r border-gray-200 hover:bg-gray-50 transition-all duration-300 group relative flex flex-col justify-between min-h-[220px]">
+        <svg class="text-gray-400 group-hover:text-[#0A66C2] transition-colors" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        <div class="absolute top-8 right-8 text-gray-300 group-hover:text-[#0A66C2] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
+          <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <p class="text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">LinkedIn</p>
+          <p class="font-medium text-gray-900">in/arush-pratap-singh</p>
+        </div>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:arush89013@gmail.com" class="p-8 hover:bg-gray-50 transition-all duration-300 group relative flex flex-col justify-between min-h-[220px]">
+        <svg class="text-gray-400 group-hover:text-red-500 transition-colors" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <div class="absolute top-8 right-8 text-gray-300 group-hover:text-red-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
+          <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <p class="text-[10px] font-semibold tracking-widest text-gray-400 uppercase mb-1">Email</p>
+          <p class="font-medium text-gray-900">arush89013@gmail.com</p>
+        </div>
+      </a>
+    </div>
+
+    <div>
+      <button onclick="copyEmail()" class="px-6 py-3 rounded-full border border-gray-200 bg-white text-xs font-semibold tracking-widest text-gray-600 uppercase hover:border-gray-900 hover:text-gray-900 hover:shadow-md transition-all active:scale-95 flex items-center gap-2">
+        <i data-lucide="copy" class="w-4 h-4"></i>
+        <span id="copy-text">Copy Email Address</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-10 bg-white">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <p class="text-[10px] font-semibold tracking-widest text-gray-400 uppercase">
+        © 2026 Arush Pratap Singh — Bhopal, India
+      </p>
+      <a href="#" class="text-[10px] font-semibold tracking-widest text-gray-600 uppercase flex items-center gap-2 hover:text-gray-900 transition-colors group">
+        Back to top
+        <span class="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-gray-900 transition-colors">
+          <i data-lucide="arrow-up" class="w-3 h-3 group-hover:-translate-y-0.5 transition-transform"></i>
+        </span>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons for base UI elements
+    lucide.createIcons();
+
+    // Copy Email Functionality
+    function copyEmail() {
+      navigator.clipboard.writeText('arush89013@gmail.com').then(() => {
+        const textSpan = document.getElementById('copy-text');
+        textSpan.textContent = 'Copied!';
+        setTimeout(() => {
+          textSpan.textContent = 'Copy Email Address';
+        }, 2000);
+      });
+    }
+
+    // Scroll Reveal Animation Logic
+    document.addEventListener("DOMContentLoaded", function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+      document.querySelectorAll('.reveal').forEach((el) => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
