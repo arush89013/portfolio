@@ -107,11 +107,43 @@
       z-index: 10;
       background: radial-gradient(circle 600px at var(--x, 50vw) var(--y, 50vh), rgba(32, 178, 170, 0.05), transparent 80%);
     }
+
+    /* Click Effects */
+    .click-ripple {
+      position: fixed;
+      border-radius: 50%;
+      border: 2px solid #20B2AA;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 999999;
+      animation: ripple-animation 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+    }
+    @keyframes ripple-animation {
+      0% { width: 0px; height: 0px; opacity: 0.8; border-width: 4px; }
+      100% { width: 120px; height: 120px; opacity: 0; border-width: 0px; }
+    }
+
+    .click-particle {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background-color: #20B2AA;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 999999;
+      animation: particle-animation 0.6s ease-out forwards;
+    }
+    @keyframes particle-animation {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      100% { transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0); opacity: 0; }
+    }
   </style>
 </head>
 
 <body class="bg-white text-gray-900 font-sans antialiased selection:bg-brand-teal selection:text-white overflow-x-hidden">
   
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-brand-teal z-[60] transition-all duration-75" style="width: 0%;"></div>
   <div id="spotlight"></div>
 
   <!-- Navigation -->
@@ -149,7 +181,9 @@
         </p>
 
         <h1 class="text-6xl sm:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.05] mb-8">
-          Arush<br/>Pratap<br/>Singh
+          <span class="scramble inline-block cursor-default" data-value="Arush">Arush</span><br/>
+          <span class="scramble inline-block cursor-default" data-value="Pratap">Pratap</span><br/>
+          <span class="scramble inline-block cursor-default" data-value="Singh">Singh</span>
         </h1>
 
         <p class="text-xs font-bold tracking-widest text-brand-teal uppercase mb-6">
@@ -615,12 +649,87 @@
       animateCursor();
 
       // Hover effect for cursor
-      const interactiveElements = document.querySelectorAll('a, button, [data-tilt]');
+      const interactiveElements = document.querySelectorAll('a, button, [data-tilt], .scramble');
       interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => cursorOutline.classList.add('hover'));
         el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hover'));
       });
     }
+
+    // Text Scramble Effect
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    document.querySelectorAll('.scramble').forEach(el => {
+      let interval = null;
+      el.addEventListener('mouseover', event => {
+        let iterations = 0;
+        clearInterval(interval);
+        interval = setInterval(() => {
+          event.target.innerText = event.target.innerText.split("")
+            .map((letter, index) => {
+              if(index < iterations) {
+                return event.target.dataset.value[index];
+              }
+              return letters[Math.floor(Math.random() * 26)]
+            })
+            .join("");
+          if(iterations >= event.target.dataset.value.length) {
+            clearInterval(interval);
+          }
+          iterations += 1 / 2;
+        }, 30);
+      });
+    });
+
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+      const scrollProgress = document.getElementById('scroll-progress');
+      if (scrollProgress) {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        scrollProgress.style.width = `${scrollPercent}%`;
+      }
+    });
+
+    // Global Click Burst & Ripple
+    window.addEventListener('click', function(e) {
+      // Custom Cursor Shrink Animation
+      const cursorDot = document.querySelector('.cursor-dot');
+      if (cursorDot) {
+        cursorDot.style.transform = 'translate(-50%, -50%) scale(0.4)';
+        setTimeout(() => {
+          cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+        }, 150);
+      }
+
+      // Create Ripple
+      const ripple = document.createElement('div');
+      ripple.classList.add('click-ripple');
+      ripple.style.left = `${e.clientX}px`;
+      ripple.style.top = `${e.clientY}px`;
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+
+      // Create Particles
+      for (let i = 0; i < 8; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('click-particle');
+        particle.style.left = `${e.clientX}px`;
+        particle.style.top = `${e.clientY}px`;
+        
+        // Random direction and velocity
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = 25 + Math.random() * 45;
+        const tx = Math.cos(angle) * velocity;
+        const ty = Math.sin(angle) * velocity;
+        
+        particle.style.setProperty('--tx', `${tx}px`);
+        particle.style.setProperty('--ty', `${ty}px`);
+        
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 600);
+      }
+    });
   </script>
 </body>
 </html>
