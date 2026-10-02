@@ -42,6 +42,9 @@
 
   <!-- Lucide Icons (For UI arrows/buttons only) -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Vanilla Tilt -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
   <style>
     /* Custom Scrollbar for Light Theme */
@@ -60,10 +63,56 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Custom Cursor */
+    @media (pointer: fine) {
+      body {
+        cursor: none;
+      }
+      .cursor-dot, .cursor-outline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 99999;
+        pointer-events: none;
+      }
+      .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #20B2AA;
+      }
+      .cursor-outline {
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(32, 178, 170, 0.5);
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+      }
+      .cursor-outline.hover {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(32, 178, 170, 0.1);
+      }
+    }
+
+    /* Ambient Spotlight */
+    #spotlight {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 10;
+      background: radial-gradient(circle 600px at var(--x, 50vw) var(--y, 50vh), rgba(32, 178, 170, 0.05), transparent 80%);
+    }
   </style>
 </head>
 
 <body class="bg-white text-gray-900 font-sans antialiased selection:bg-brand-teal selection:text-white overflow-x-hidden">
+  
+  <div id="spotlight"></div>
 
   <!-- Navigation -->
   <header class="fixed top-0 inset-x-0 bg-white/80 backdrop-blur-md border-b border-gray-100 z-50 transition-all duration-300">
@@ -204,27 +253,27 @@
         <div>
           <h3 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">01 — Languages & Databases</h3>
           <div class="grid grid-cols-3 gap-4">
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" alt="Kotlin" class="w-10 h-10 hover:scale-110 transition-transform"/>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">Kotlin</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="w-10 h-10 hover:scale-110 transition-transform"/>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">Java</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="w-10 h-10 hover:scale-110 transition-transform"/>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">Python</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="w-10 h-10 hover:scale-110 transition-transform"/>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">C++</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" class="w-10 h-10 hover:scale-110 transition-transform"/>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">C</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="w-10 h-10 hover:scale-110 transition-transform"/>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase">MySQL</span>
             </div>
@@ -235,23 +284,23 @@
         <div>
           <h3 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">02 — Tools & IDEs</h3>
           <div class="grid grid-cols-3 gap-4">
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" alt="Android Studio" class="w-10 h-10 hover:scale-110 transition-transform"/>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Android Studio</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" class="w-10 h-10 hover:scale-110 transition-transform"/>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">VS Code</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA" class="w-10 h-10 hover:scale-110 transition-transform"/>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">IntelliJ Idea</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg" alt="MATLAB" class="w-10 h-10 hover:scale-110 transition-transform"/>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">MATLAB</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <!-- Official AutoCAD Red Logo SVG -->
               <svg viewBox="0 0 24 24" fill="none" class="w-10 h-10 hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.4 2.4h19.2v19.2H2.4V2.4z" fill="#D32F2F"/>
@@ -266,18 +315,18 @@
         <div>
           <h3 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">03 — Currently Exploring</h3>
           <div class="grid grid-cols-3 gap-4">
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" alt="Android" class="w-10 h-10 hover:scale-110 transition-transform"/>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Android Dev</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <!-- Custom AI Purple Sparkle (Matching PDF) -->
               <svg viewBox="0 0 24 24" fill="none" class="w-10 h-10 hover:scale-110 transition-transform" stroke="none">
                 <path d="M12 2L14 9L21 11L14 13L12 20L10 13L3 11L10 9L12 2Z" fill="#9b59b6" />
               </svg>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Artificial Intelligence</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <!-- Cloud Icon -->
               <svg viewBox="0 0 24 24" class="w-10 h-10 hover:scale-110 transition-transform" fill="#3498db">
                 <path d="M17.5 19c2.48 0 4.5-2.02 4.5-4.5 0-2.31-1.74-4.23-4-4.46V10c0-3.31-2.69-6-6-6-2.92 0-5.36 2.09-5.9 4.88C3.26 9.4 1 11.66 1 14.5 1 17.53 3.47 20 6.5 20h11z"/>
@@ -291,12 +340,12 @@
         <div>
           <h3 class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">04 — Strengths</h3>
           <div class="grid grid-cols-3 gap-4">
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <!-- Lightbulb Outline -->
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hover:scale-110 transition-transform"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.2 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Problem Solving</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <!-- Data Structure Tree Outline -->
               <svg viewBox="0 0 24 24" fill="none" width="36" height="36" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hover:scale-110 transition-transform">
                 <rect x="10" y="3" width="4" height="4" rx="1" />
@@ -308,7 +357,7 @@
               </svg>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Data Structures</span>
             </div>
-            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default">
+            <div class="bg-white border border-gray-100 rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-square shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all cursor-default" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
               <!-- Shield Outline -->
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hover:scale-110 transition-transform"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               <span class="text-[10px] font-bold tracking-widest text-gray-400 uppercase text-center leading-tight">Security Projects</span>
@@ -335,7 +384,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
       <!-- Project 1 -->
-      <div class="rounded-3xl border border-gray-200 bg-white p-10 flex flex-col relative group hover:-translate-y-2 hover:border-gray-300 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-500">
+      <div class="rounded-3xl border border-gray-200 bg-white p-10 flex flex-col relative group hover:-translate-y-2 hover:border-gray-300 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-500" data-tilt data-tilt-max="3" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.15">
         <a href="https://github.com/arush89013/cyberforge" target="_blank" class="absolute top-8 right-8 w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-gray-900 group-hover:border-gray-900 transition-all duration-300">
           <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
         </a>
@@ -375,7 +424,7 @@
       </div>
 
       <!-- Project 2 -->
-      <div class="rounded-3xl border border-gray-200 bg-white p-10 flex flex-col relative group hover:-translate-y-2 hover:border-gray-300 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-500">
+      <div class="rounded-3xl border border-gray-200 bg-white p-10 flex flex-col relative group hover:-translate-y-2 hover:border-gray-300 hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-500" data-tilt data-tilt-max="3" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.15">
         <a href="https://github.com/arush89013/min-sentinel" target="_blank" class="absolute top-8 right-8 w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-white group-hover:bg-gray-900 group-hover:border-gray-900 transition-all duration-300">
           <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
         </a>
@@ -527,6 +576,51 @@
         observer.observe(el);
       });
     });
+
+    // Custom Cursor Logic
+    if (window.matchMedia('(pointer: fine)').matches) {
+      const cursorDot = document.createElement('div');
+      const cursorOutline = document.createElement('div');
+      cursorDot.classList.add('cursor-dot');
+      cursorOutline.classList.add('cursor-outline');
+      document.body.appendChild(cursorDot);
+      document.body.appendChild(cursorOutline);
+
+      let currentX = 0;
+      let currentY = 0;
+      let targetX = 0;
+      let targetY = 0;
+
+      window.addEventListener('mousemove', function(e) {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        cursorDot.style.left = `${e.clientX}px`;
+        cursorDot.style.top = `${e.clientY}px`;
+        
+        // Update Spotlight
+        const spotlight = document.getElementById('spotlight');
+        if (spotlight) {
+          spotlight.style.setProperty('--x', `${e.clientX}px`);
+          spotlight.style.setProperty('--y', `${e.clientY}px`);
+        }
+      });
+
+      function animateCursor() {
+        currentX += (targetX - currentX) * 0.15;
+        currentY += (targetY - currentY) * 0.15;
+        cursorOutline.style.left = `${currentX}px`;
+        cursorOutline.style.top = `${currentY}px`;
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+
+      // Hover effect for cursor
+      const interactiveElements = document.querySelectorAll('a, button, [data-tilt]');
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursorOutline.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hover'));
+      });
+    }
   </script>
 </body>
 </html>
